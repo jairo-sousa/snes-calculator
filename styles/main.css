@@ -42,16 +42,28 @@ body {
 }
 
 #joypadBody {
-	width: fit-content;
+	width: 771px;
 	height: fit-content;
 
 	display: flex;
+	justify-content: space-between;
+
+	position: relative;
 }
 
 .grabbingPart {
-	height: 324.2px;
-	width: 324.2px;
+	height: 324px;
+	width: 324px;
 	border-radius: 50%;
 
 	background-color: var(--joypad-body-color);
+}
+
+#partsConnection {
+	width: calc(771px - 324px);
+	height: 284px;
+	background-color: var(--joypad-body-color);
+	position: absolute;
+	left: 50%;
+	transform: translate(-50%);
 }
