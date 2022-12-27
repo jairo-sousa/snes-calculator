@@ -1,0 +1,64 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: roboto, sans-serif;
+}
+
+:root {
+	--app-bg-color: #5b9a89;
+	--joypad-body-color: #c6c8c9;
+}
+
+html,
+body {
+	width: 100%;
+	height: 100%;
+}
+
+#app {
+	width: 100%;
+	height: 100%;
+
+	background-color: var(--app-bg-color);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+#calculator {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#display {
+}
+
+#joypad {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-between;
+}
+
+#lrbutons {
+	width: fit-content;
+	height: fit-content;
+}
+
+#joypadBody {
+	width: fit-content;
+	height: fit-content;
+
+	display: flex;
+}
+
+.grabbingPart {
+	height: 324.2px;
+	width: 324.2px;
+	border-radius: 50%;
+
+	background-color: var(--joypad-body-color);
+}
