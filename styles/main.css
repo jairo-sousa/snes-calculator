@@ -45,11 +45,11 @@ input {
 #display input {
 	width: 595px;
 	height: 70px;
-	padding: 20px;
+	padding: 12px;
 
 	background-color: #000000;
 	color: #ffffff;
-	border-radius: 1rem;
+	border-radius: 0.5rem;
 	border: 6px solid var(--display-border-color);
 
 	text-align: end;
