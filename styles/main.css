@@ -13,12 +13,17 @@
 	--joypad-body-color: #c6c8c9;
 	--right-part-detail-color: #6c7275;
 	--cross-key-color: #3a4547;
+	--display-border-color: #005360;
 }
 
 html,
 body {
 	width: 100%;
 	height: 100%;
+}
+
+input {
+	outline: none;
 }
 
 #app {
@@ -35,6 +40,19 @@ body {
 }
 
 #display {
+}
+
+#display input {
+	width: 595px;
+	height: 70px;
+	padding: 20px;
+
+	background-color: #000000;
+	color: #ffffff;
+	border-radius: 1rem;
+	border: 6px solid var(--display-border-color);
+
+	text-align: end;
 }
 
 #joypad {
