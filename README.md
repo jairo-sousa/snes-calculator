@@ -1,7 +1,7 @@
 <h1 align="center"> SNES Calculator </h1>
 <p align="center">Uma calculadora simples com o design de um controle SNES</p>
 
-<h3 align="center"><a href="https://jairo-sousa.github.io/snes-calculator/">Clique para visitar o projeto</a></h3>
+<h3 align="center"><a href="https://jairo-sousa.github.io/snes-calculator/" target="_blank">Clique para visitar o projeto</a></h3>
 
 ## Objetivo
 
@@ -17,8 +17,8 @@ Projeto desenvolvido com as seguintes tecnologias:
 
 ## Layout
 
-Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/community/file/1189642554932733397). É necessário ter conta no [FIGMA](https://www.figma.com/) para acessá-lo.
+Você pode visualizar o layout do projeto através [DESSE LINK](https://www.figma.com/community/file/1189642554932733397). É necessário ter conta no [FIGMA](https://www.figma.com/) para editá-lo.
 
 ---
 
-Feito por [DESSE LINK](https://github.com/jairo-sousa)
+Feito por <a href="https://github.com/jairo-sousa/" target="_blank">Jairo Sousa</a>
