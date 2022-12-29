@@ -13,15 +13,18 @@
 			<h1 style="position: absolute; top: 50px">
 				Site in production / Site em produção
 			</h1>
+
 			<main id="calculator" class="flex alignI-center">
 				<div id="display">
 					<input type="text" id="displayedNumber" />
 				</div>
+
 				<div id="joypad" class="flex alignI-center">
 					<div id="lrbutons" class="flex">
 						<div class="lrbuton flex-center">=</div>
 						<div class="lrbuton flex-center">0</div>
 					</div>
+
 					<div id="joypadBody">
 						<div id="partsConnection" class="flex-center">
 							<div id="centerKeys" class="flex">
@@ -29,8 +32,24 @@
 								<div class="centerKey flex-center"><span>.0</span></div>
 							</div>
 						</div>
-						<div class="grabbingPart"></div>
-						<div class="grabbingPart"></div>
+
+						<div class="grabbingPart flex-center">
+							<div id="crossKeys" class="flex-center">
+								<div class="crosKeyGroup xAxisGroup flex alignI-center">
+									<span>+</span>
+									<span>-</span>
+								</div>
+
+								<div class="crosKeyGroup yAxisGroup flex alignI-center">
+									<span><div>*</div></span>
+									<span>÷</span>
+								</div>
+							</div>
+						</div>
+
+						<div class="grabbingPart flex-center">
+							<div>Right grabbingPart</div>
+						</div>
 					</div>
 				</div>
 			</main>

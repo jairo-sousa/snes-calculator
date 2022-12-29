@@ -39,9 +39,6 @@ input {
 	justify-content: space-between;
 }
 
-#display {
-}
-
 #display input {
 	width: 595px;
 	height: 70px;
@@ -93,6 +90,11 @@ input {
 	background-color: var(--joypad-body-color);
 }
 
+.grabbingPart :only-child {
+	position: relative;
+	z-index: 1;
+}
+
 #partsConnection {
 	width: calc(771px - 324px);
 	height: 284px;
@@ -126,6 +128,38 @@ input {
 }
 
 .centerKey span {
+	display: flex;
+	align-items: center;
 	font-size: 20pt;
 	transform: rotate(40deg);
+}
+
+#crossKeys {
+	/*--*/
+}
+
+.crosKeyGroup {
+	height: 43px;
+	width: 129px;
+	padding: 0 calc((126px / 3) / 4);
+
+	background-color: var(--cross-key-color);
+	color: var(--joypad-body-color);
+	border-radius: 8px;
+
+	justify-content: space-between;
+}
+
+.yAxisGroup {
+	position: absolute;
+	transform: rotate(90deg);
+}
+
+.yAxisGroup :first-child :only-child {
+	transform: translate(0, 15%);
+}
+
+.yAxisGroup :last-child,
+.yAxisGroup :first-child {
+	transform: rotate(-90deg);
 }
