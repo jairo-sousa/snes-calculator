@@ -9,7 +9,7 @@
 
 ## Objetivo
 
-Praticar as recnologias usadas
+Praticar as tecnologias usadas
 
 ## Tecnologias
 
