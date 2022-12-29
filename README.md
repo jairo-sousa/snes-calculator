@@ -1,6 +1,10 @@
 <h1 align="center"> SNES Calculator </h1>
 <p align="center">Uma calculadora simples com o design de um controle SNES</p>
 
+<p align="center">
+  <img alt="SNES Calculator preview" src=".github/preview.png">
+</p>
+
 <h3 align="center"><a href="https://jairo-sousa.github.io/snes-calculator/" target="_blank">Clique para visitar o projeto</a></h3>
 
 ## Objetivo
