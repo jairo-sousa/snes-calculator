@@ -150,28 +150,6 @@ input {
 	transform: translate(0, 15%);
 }
 
-.yAxisGroup {
-	position: absolute;
-	transform: rotate(90deg);
-}
-
-.yAxisGroup :last-child,
-.yAxisGroup :first-child {
-	transform: rotate(-90deg);
-}
-
-.vAxisGroup :last-child,
-.vAxisGroup :first-child,
-.wAxisGroup {
-	transform: rotate(-45deg);
-}
-
-.wAxisGroup :last-child,
-.wAxisGroup :first-child,
-.vAxisGroup {
-	transform: rotate(45deg);
-}
-
 #circleKeys {
 	width: 288px;
 	height: 288px;
