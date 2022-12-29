@@ -146,16 +146,61 @@ input {
 	justify-content: space-between;
 }
 
+#crossKeys .yAxisGroup :first-child :only-child {
+	transform: translate(0, 15%);
+}
+
 .yAxisGroup {
 	position: absolute;
 	transform: rotate(90deg);
 }
 
-.yAxisGroup :first-child :only-child {
-	transform: translate(0, 15%);
-}
-
 .yAxisGroup :last-child,
 .yAxisGroup :first-child {
 	transform: rotate(-90deg);
+}
+
+.vAxisGroup :last-child,
+.vAxisGroup :first-child,
+.wAxisGroup {
+	transform: rotate(-45deg);
+}
+
+.wAxisGroup :last-child,
+.wAxisGroup :first-child,
+.vAxisGroup {
+	transform: rotate(45deg);
+}
+
+#circleKeys {
+	width: 288px;
+	height: 288px;
+
+	background-color: var(--right-part-detail-color);
+	border-radius: 50%;
+}
+
+#circleKeys :only-child {
+	width: 220px;
+	height: 220px;
+
+	background-color: var(--joypad-body-color);
+	border-radius: 50%;
+}
+
+.circleKeyGroup {
+	width: 198px;
+	height: 55px;
+
+	position: absolute;
+	justify-content: space-between;
+}
+
+.circleKeyGroup .key {
+	width: 50px;
+	height: 50px;
+	font-size: 25pt;
+	background-color: var(--cross-key-color);
+	color: var(--joypad-body-color);
+	border-radius: 50%;
 }
