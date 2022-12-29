@@ -50,6 +50,7 @@ input {
 	border: 6px solid var(--display-border-color);
 
 	text-align: end;
+	caret-color: transparent;
 }
 
 #joypad {
