@@ -13,6 +13,7 @@ window.onload = function () {
 	function evaluate(expression) {
 		//WARNING this function presents security risks
 		try {
+			if (expression.match(/[a-zA-z&#$<>{}]/g)) throw new Error();
 			return new Function(`return (${expression})`)();
 		} catch (e) {
 			return null;
