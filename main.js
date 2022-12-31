@@ -10,13 +10,15 @@ displayedContent.oninput = function () {
 };
 
 window.addEventListener("keydown", (keyEvent) => {
+	const evaluated = evaluate(displayedContent.value);
+	const result = isNumber(evaluated) ? round(evaluated) : "---";
 	try {
 		comand = {
 			Enter: () => {
-				displayedContent.value = evaluate(displayedContent.value);
+				displayedContent.value = result;
 			},
 			"=": () => {
-				displayedContent.value = evaluate(displayedContent.value);
+				displayedContent.value = result;
 			},
 		}[`${keyEvent.key}`]();
 	} catch (e) {
@@ -32,4 +34,16 @@ function evaluate(expression) {
 	} catch (e) {
 		return null;
 	}
+}
+
+function isNumber(value) {
+	if (typeof value === "number") {
+		return !isNaN(value) && isFinite(value);
+	} else {
+		return null;
+	}
+}
+
+function round(value) {
+	return Math.round(value * 100) / 100;
 }
