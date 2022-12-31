@@ -2,7 +2,7 @@ const displayedContent = document.querySelector("#displayedContent");
 
 displayedContent.focus();
 displayedContent.onblur = function () {
-	displayedContent.focus();
+	this.focus();
 };
 
 displayedContent.oninput = function () {
