@@ -1,12 +1,12 @@
 window.onload = function () {
-	const displayedNumber = document.querySelector("#displayedNumber");
+	const displayedContent = document.querySelector("#displayedContent");
 
-	displayedNumber.focus();
-	displayedNumber.onblur = function () {
-		displayedNumber.focus();
+	displayedContent.focus();
+	displayedContent.onblur = function () {
+		displayedContent.focus();
 	};
 
-	displayedNumber.oninput = function () {
+	displayedContent.oninput = function () {
 		//TODO Filter numbers
 	};
 
@@ -23,10 +23,10 @@ window.onload = function () {
 		try {
 			comand = {
 				Enter: () => {
-					displayedNumber.value = evaluate(displayedNumber.value);
+					displayedContent.value = evaluate(displayedContent.value);
 				},
 				"=": () => {
-					displayedNumber.value = evaluate(displayedNumber.value);
+					displayedContent.value = evaluate(displayedContent.value);
 				},
 			}[`${keyEvent.key}`]();
 		} catch (e) {
