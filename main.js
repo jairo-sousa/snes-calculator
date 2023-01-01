@@ -14,7 +14,7 @@ displayedContent.oninput = function () {
 		}
 	});
 
-	this.value = inputValue.join("");
+	this.value = inputValue.join("").replace(",", ".");
 };
 
 window.addEventListener("keydown", (keyEvent) => {
@@ -75,7 +75,6 @@ function round(value) {
 	return Math.round(value * 100) / 100;
 }
 
-//TODO replace , for .
 //TODO clear input before new expressions
 // waitNewExpression(){ whe type any so:  clearInput()}
 
