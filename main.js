@@ -1,11 +1,19 @@
 const displayedContent = document.querySelector("#displayedContent");
+const joypad = document.getElementById("joypad");
+
+let clearWhenInput = false;
+
+joypad.addEventListener("click", (event) => {
+	const clickedElement = event.target;
+	if (clickedElement.className.includes("key")) {
+		inputByClick(clickedElement.innerText);
+	}
+});
 
 displayedContent.focus();
 displayedContent.onblur = function () {
 	this.focus();
 };
-
-let clearWhenInput = false;
 
 displayedContent.oninput = function () {
 	const inputValue = displayedContent.value.split("").map((char) => {
@@ -81,11 +89,11 @@ function round(value) {
 	return Math.round(value * 100) / 100;
 }
 
-//TODO accept entry from clicked buttons in front end
+function inputByClick(text) {
+	displayedContent.value += text;
+}
 
 //TODO show preview of results below
 //TODO add copy to clipboard buttom
-//TODO show only absolute value and put the signal on the left
-//(something like space-between)
 
 //TODO remove h1 "First release"
