@@ -5,6 +5,8 @@ displayedContent.onblur = function () {
 	this.focus();
 };
 
+let clearWhenInput = false;
+
 displayedContent.oninput = function () {
 	const inputValue = displayedContent.value.split("").map((char) => {
 		if (isNumber(char) || isSpecial(char)) {
@@ -15,6 +17,10 @@ displayedContent.oninput = function () {
 	});
 
 	this.value = inputValue.join("").replace(",", ".");
+	if (clearWhenInput) {
+		this.value = this.value[this.value.length - 1];
+		clearWhenInput = false;
+	}
 };
 
 window.addEventListener("keydown", (keyEvent) => {
@@ -24,11 +30,11 @@ window.addEventListener("keydown", (keyEvent) => {
 		comand = {
 			Enter: () => {
 				displayedContent.value = result;
-				// waitNewExpression()
+				clearWhenInput = true;
 			},
 			"=": () => {
 				displayedContent.value = result;
-				// waitNewExpression()
+				clearWhenInput = true;
 			},
 		}[`${keyEvent.key}`]();
 	} catch (e) {
@@ -75,9 +81,11 @@ function round(value) {
 	return Math.round(value * 100) / 100;
 }
 
-//TODO clear input before new expressions
-// waitNewExpression(){ whe type any so:  clearInput()}
-
 //TODO accept entry from clicked buttons in front end
+
 //TODO show preview of results below
 //TODO add copy to clipboard buttom
+//TODO show only absolute value and put the signal on the left
+//(something like space-between)
+
+//TODO remove h1 "First release"
