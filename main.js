@@ -7,7 +7,7 @@ displayedContent.onblur = function () {
 
 displayedContent.oninput = function () {
 	const inputValue = displayedContent.value.split("").map((char) => {
-		if (isNumber(char) || isOperator(char)) {
+		if (isNumber(char) || isSpecial(char)) {
 			return char;
 		} else {
 			return null;
@@ -24,9 +24,11 @@ window.addEventListener("keydown", (keyEvent) => {
 		comand = {
 			Enter: () => {
 				displayedContent.value = result;
+				// waitNewExpression()
 			},
 			"=": () => {
 				displayedContent.value = result;
+				// waitNewExpression()
 			},
 		}[`${keyEvent.key}`]();
 	} catch (e) {
@@ -53,15 +55,17 @@ function isNumber(value) {
 	}
 }
 
-function isOperator(value) {
+function isSpecial(value) {
 	try {
-		operator = {
+		Special = {
 			"+": "+",
 			"-": "-",
 			"*": "*",
 			"/": "/",
+			".": ".",
+			",": ",",
 		}[value];
-		return operator;
+		return Special;
 	} catch {
 		return null;
 	}
@@ -70,3 +74,11 @@ function isOperator(value) {
 function round(value) {
 	return Math.round(value * 100) / 100;
 }
+
+//TODO replace , for .
+//TODO clear input before new expressions
+// waitNewExpression(){ whe type any so:  clearInput()}
+
+//TODO accept entry from clicked buttons in front end
+//TODO show preview of results below
+//TODO add copy to clipboard buttom
