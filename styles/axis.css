@@ -8,14 +8,20 @@
 	transform: rotate(-90deg);
 }
 
-.vAxisGroup :last-child,
-.vAxisGroup :first-child,
 .wAxisGroup {
 	transform: rotate(-45deg);
 }
 
 .wAxisGroup :last-child,
-.wAxisGroup :first-child,
-.vAxisGroup {
+.wAxisGroup :first-child {
 	transform: rotate(45deg);
+}
+
+.vAxisGroup :last-child,
+.vAxisGroup :first-child {
+	transform: rotate(135deg);
+}
+
+.vAxisGroup {
+	transform: rotate(-135deg);
 }
