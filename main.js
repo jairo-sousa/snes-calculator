@@ -5,6 +5,7 @@ let clearWhenInput = false;
 
 joypad.addEventListener("click", (event) => {
 	const clickedElement = event.target;
+	console.log(clickedElement.className);
 	if (clickedElement.className.includes("key")) {
 		inputByClick(clickedElement.innerText);
 	}
@@ -84,15 +85,18 @@ function isSpecial(value) {
 		return null;
 	}
 }
-
 function round(value) {
 	return Math.round(value * 100) / 100;
 }
 
 function inputByClick(text) {
+	if (text[1]) {
+		text = text[0];
+	}
 	displayedContent.value += text;
 }
 
+//TODO bugfix: prevent repetitive dots let containsDot = false
 //TODO show preview of results below
 //TODO add copy to clipboard buttom
 
