@@ -1,3 +1,7 @@
+.xAxisGroup {
+	z-index: 1;
+}
+
 .yAxisGroup {
 	position: absolute;
 	transform: rotate(90deg);
