@@ -6,7 +6,15 @@ displayedContent.onblur = function () {
 };
 
 displayedContent.oninput = function () {
-	//TODO Filter numbers
+	const inputValue = displayedContent.value.split("").map((char) => {
+		if (isNumber(char) || isOperator(char)) {
+			return char;
+		} else {
+			return null;
+		}
+	});
+
+	this.value = inputValue.join("");
 };
 
 window.addEventListener("keydown", (keyEvent) => {
@@ -27,7 +35,8 @@ window.addEventListener("keydown", (keyEvent) => {
 });
 
 function evaluate(expression) {
-	//WARNING this function presents security risks
+	//WARNING this function presents security risks,
+	//but it's not for production so let's leave it like that...
 	try {
 		if (expression.match(/[a-zA-z&#$<>{}]/g)) throw new Error();
 		return new Function(`return (${expression})`)();
@@ -37,9 +46,23 @@ function evaluate(expression) {
 }
 
 function isNumber(value) {
-	if (typeof value === "number") {
+	if (typeof parseInt(value) === "number") {
 		return !isNaN(value) && isFinite(value);
 	} else {
+		return null;
+	}
+}
+
+function isOperator(value) {
+	try {
+		operator = {
+			"+": "+",
+			"-": "-",
+			"*": "*",
+			"/": "/",
+		}[value];
+		return operator;
+	} catch {
 		return null;
 	}
 }
