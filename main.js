@@ -118,7 +118,6 @@ function clearDisplay() {
 }
 
 //bugfix
-//TODO bugfix: clear by click or typing C
 //TODO bugfix: evaluate by click =
 
 //TODO bugfix: prevent repetitive dots let containsDot = false
