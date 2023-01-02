@@ -7,7 +7,7 @@ joypad.addEventListener("click", (event) => {
 	const clickedElement = event.target;
 	if (clickedElement.className.includes("key")) {
 		inputByClick(clickedElement.innerText);
-		//filterInput(displayedContent);
+		filterInput(displayedContent);
 	}
 	if (clickedElement.className.includes("command")) {
 		comandByClick(clickedElement.innerText, displayedContent);
