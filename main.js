@@ -35,17 +35,13 @@ displayedContent.oninput = function () {
 };
 
 window.addEventListener("keydown", (keyEvent) => {
-	const evaluated = evaluate(displayedContent.value);
-	const result = isNumber(evaluated) ? round(evaluated) : "---";
 	try {
 		comand = {
 			Enter: () => {
-				displayedContent.value = result;
-				clearWhenInput = true;
+				clearWhenInput = displayResult(displayedContent);
 			},
 			"=": () => {
-				displayedContent.value = result;
-				clearWhenInput = true;
+				clearWhenInput = displayResult(displayedContent);
 			},
 			c: () => {
 				clearDisplay();
@@ -111,6 +107,13 @@ function comandByClick(command) {
 	} catch (e) {
 		console.log(e);
 	}
+}
+
+function displayResult(display) {
+	const evaluated = evaluate(display.value);
+	const result = isNumber(evaluated) ? round(evaluated) : "---";
+	display.value = result;
+	return true;
 }
 
 function clearDisplay() {
