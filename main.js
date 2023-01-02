@@ -7,9 +7,10 @@ joypad.addEventListener("click", (event) => {
 	const clickedElement = event.target;
 	if (clickedElement.className.includes("key")) {
 		inputByClick(clickedElement.innerText);
+		//filterInput(displayedContent);
 	}
 	if (clickedElement.className.includes("command")) {
-		clearWhenInput = comandByClick(clickedElement.innerText, displayedContent);
+		comandByClick(clickedElement.innerText, displayedContent);
 	}
 });
 
@@ -19,19 +20,7 @@ displayedContent.onblur = function () {
 };
 
 displayedContent.oninput = function () {
-	const inputValue = displayedContent.value.split("").map((char) => {
-		if (isNumber(char) || isSpecial(char)) {
-			return char;
-		} else {
-			return null;
-		}
-	});
-
-	this.value = inputValue.join("").replace(",", ".");
-	if (clearWhenInput) {
-		this.value = this.value[this.value.length - 1];
-		clearWhenInput = false;
-	}
+	filterInput(this);
 };
 
 window.addEventListener("keydown", (keyEvent) => {
@@ -42,6 +31,7 @@ window.addEventListener("keydown", (keyEvent) => {
 			},
 			"=": () => {
 				clearWhenInput = displayResult(displayedContent);
+				console.log(clearWhenInput);
 			},
 			c: () => {
 				clearDisplay();
@@ -90,6 +80,23 @@ function round(value) {
 	return Math.round(value * 100) / 100;
 }
 
+function filterInput(display) {
+	const inputValue = display.value.split("").map((char) => {
+		if (isNumber(char) || isSpecial(char)) {
+			return char;
+		} else {
+			return null;
+		}
+	});
+
+	display.value = inputValue.join("").replace(",", ".");
+
+	if (clearWhenInput) {
+		display.value = display.value[display.value.length - 1];
+		clearWhenInput = false;
+	}
+}
+
 function inputByClick(text) {
 	if (text[1]) {
 		text = text[0];
@@ -104,7 +111,7 @@ function comandByClick(command, display) {
 				clearDisplay();
 			},
 			"=": () => {
-				return displayResult(display);
+				clearWhenInput = displayResult(display);
 			},
 		}[`${command}`]();
 	} catch (e) {
@@ -124,12 +131,11 @@ function clearDisplay() {
 }
 
 //bugfix
-//TODO bugfix: evaluate by click =
-
 //TODO bugfix: prevent repetitive dots let containsDot = false
-//TODO bugfix: resize keys to exact visual size
 
 //Improvements
 //TODO feat: show preview of results below
 //TODO feat: add copy to clipboard buttom
 //TODO remove h1 "First release"
+
+//TODO bugfix: resize cross keys to exact visual size
