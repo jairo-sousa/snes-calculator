@@ -5,9 +5,11 @@ let clearWhenInput = false;
 
 joypad.addEventListener("click", (event) => {
 	const clickedElement = event.target;
-	console.log(clickedElement.className);
 	if (clickedElement.className.includes("key")) {
 		inputByClick(clickedElement.innerText);
+	}
+	if (clickedElement.className.includes("command")) {
+		comandByClick(clickedElement.innerText);
 	}
 });
 
@@ -44,6 +46,9 @@ window.addEventListener("keydown", (keyEvent) => {
 			"=": () => {
 				displayedContent.value = result;
 				clearWhenInput = true;
+			},
+			c: () => {
+				clearDisplay();
 			},
 		}[`${keyEvent.key}`]();
 	} catch (e) {
@@ -96,8 +101,30 @@ function inputByClick(text) {
 	displayedContent.value += text;
 }
 
-//TODO bugfix: prevent repetitive dots let containsDot = false
-//TODO show preview of results below
-//TODO add copy to clipboard buttom
+function comandByClick(command) {
+	try {
+		commands = {
+			C: () => {
+				clearDisplay();
+			},
+		}[`${command}`]();
+	} catch (e) {
+		console.log(e);
+	}
+}
 
+function clearDisplay() {
+	displayedContent.value = "";
+}
+
+//bugfix
+//TODO bugfix: clear by click or typing C
+//TODO bugfix: evaluate by click =
+
+//TODO bugfix: prevent repetitive dots let containsDot = false
+//TODO bugfix: resize keys to exact visual size
+
+//Improvements
+//TODO feat: show preview of results below
+//TODO feat: add copy to clipboard buttom
 //TODO remove h1 "First release"
