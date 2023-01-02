@@ -9,7 +9,7 @@ joypad.addEventListener("click", (event) => {
 		inputByClick(clickedElement.innerText);
 	}
 	if (clickedElement.className.includes("command")) {
-		comandByClick(clickedElement.innerText);
+		clearWhenInput = comandByClick(clickedElement.innerText, displayedContent);
 	}
 });
 
@@ -97,11 +97,14 @@ function inputByClick(text) {
 	displayedContent.value += text;
 }
 
-function comandByClick(command) {
+function comandByClick(command, display) {
 	try {
 		commands = {
 			C: () => {
 				clearDisplay();
+			},
+			"=": () => {
+				return displayResult(display);
 			},
 		}[`${command}`]();
 	} catch (e) {
