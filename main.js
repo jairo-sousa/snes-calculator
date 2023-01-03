@@ -36,7 +36,7 @@ window.addEventListener("keydown", (keyEvent) => {
 				console.log(displayedContentStatus.clearWhenInput);
 			},
 			c: () => {
-				clearDisplay();
+				clearDisplay(displayedContent);
 			},
 		}[`${keyEvent.key}`]();
 	} catch (e) {
@@ -110,7 +110,7 @@ function comandByClick(command, display) {
 	try {
 		commands = {
 			C: () => {
-				clearDisplay();
+				clearDisplay(display);
 			},
 			"=": () => {
 				displayedContentStatus.clearWhenInput = displayResult(display);
@@ -128,8 +128,8 @@ function displayResult(display) {
 	return true;
 }
 
-function clearDisplay() {
-	displayedContent.value = "";
+function clearDisplay(display) {
+	display.value = "";
 }
 
 //bugfix
