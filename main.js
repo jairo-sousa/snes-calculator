@@ -12,7 +12,7 @@ joypad.addEventListener("click", (event) => {
 		filterInput(displayedContent);
 	}
 	if (clickedElement.className.includes("command")) {
-		comandByClick(clickedElement.innerText, displayedContent);
+		commandByClick(clickedElement.innerText, displayedContent);
 	}
 });
 
@@ -27,7 +27,7 @@ displayedContent.oninput = function () {
 
 window.addEventListener("keydown", (keyEvent) => {
 	try {
-		comand = {
+		command = {
 			Enter: () => {
 				displayedContentStatus.clearWhenInput = displayResult(displayedContent);
 			},
@@ -106,7 +106,7 @@ function inputByClick(text) {
 	displayedContent.value += text;
 }
 
-function comandByClick(command, display) {
+function commandByClick(command, display) {
 	try {
 		commands = {
 			C: () => {
