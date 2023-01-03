@@ -1,7 +1,9 @@
 const displayedContent = document.querySelector("#displayedContent");
 const joypad = document.getElementById("joypad");
 
-let clearWhenInput = false;
+const displayedContentStatus = {
+	clearWhenInput: false,
+};
 
 joypad.addEventListener("click", (event) => {
 	const clickedElement = event.target;
@@ -27,11 +29,11 @@ window.addEventListener("keydown", (keyEvent) => {
 	try {
 		comand = {
 			Enter: () => {
-				clearWhenInput = displayResult(displayedContent);
+				displayedContentStatus.clearWhenInput = displayResult(displayedContent);
 			},
 			"=": () => {
-				clearWhenInput = displayResult(displayedContent);
-				console.log(clearWhenInput);
+				displayedContentStatus.clearWhenInput = displayResult(displayedContent);
+				console.log(displayedContentStatus.clearWhenInput);
 			},
 			c: () => {
 				clearDisplay();
@@ -91,9 +93,9 @@ function filterInput(display) {
 
 	display.value = inputValue.join("").replace(",", ".");
 
-	if (clearWhenInput) {
+	if (displayedContentStatus.clearWhenInput) {
 		display.value = display.value[display.value.length - 1];
-		clearWhenInput = false;
+		displayedContentStatus.clearWhenInput = false;
 	}
 }
 
@@ -111,7 +113,7 @@ function comandByClick(command, display) {
 				clearDisplay();
 			},
 			"=": () => {
-				clearWhenInput = displayResult(display);
+				displayedContentStatus.clearWhenInput = displayResult(display);
 			},
 		}[`${command}`]();
 	} catch (e) {
