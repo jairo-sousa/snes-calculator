@@ -122,18 +122,19 @@ function commandByClick(command, display) {
 }
 
 function displayResult(display) {
-	const evaluated = evaluate(display.value);
-	const result = isNumber(evaluated) ? round(evaluated) : "---";
-	display.value = result;
+	display.value = evaluation(display.value);
 	return true;
+}
+
+function evaluation(value) {
+	const evaluated = evaluate(value);
+	const result = isNumber(evaluated) ? round(evaluated) : "---";
+	return result;
 }
 
 function clearDisplay(display) {
 	display.value = "";
 }
-
-//bugfix
-//TODO bugfix: prevent repetitive dots let containsDot = false
 
 //Improvements
 //TODO feat: show preview of results below
@@ -141,3 +142,6 @@ function clearDisplay(display) {
 //TODO remove h1 "First release"
 
 //TODO bugfix: resize cross keys to exact visual size
+
+//bugfix
+//TODO bugfix: prevent repetitive dots use ajax?
