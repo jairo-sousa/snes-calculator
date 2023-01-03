@@ -1,4 +1,5 @@
 const displayedContent = document.querySelector("#displayedContent");
+const preview = document.querySelector("#preview");
 const joypad = document.getElementById("joypad");
 
 const displayedContentStatus = {
@@ -23,6 +24,8 @@ displayedContent.onblur = function () {
 
 displayedContent.oninput = function () {
 	filterInput(this);
+	preview.value = this.value;
+	displayResult(preview);
 };
 
 window.addEventListener("keydown", (keyEvent) => {
@@ -137,7 +140,6 @@ function clearDisplay(display) {
 }
 
 //Improvements
-//TODO feat: show preview of results below
 //TODO feat: add copy to clipboard buttom
 //TODO remove h1 "First release"
 
