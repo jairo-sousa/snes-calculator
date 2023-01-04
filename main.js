@@ -150,11 +150,16 @@ function clearDisplay(display) {
 }
 
 function copyFromImput(input) {
-	//hideSelection(input);
+	hideSelection(input);
 	input.select();
 	input.setSelectionRange(0, 99999);
 	document.execCommand("copy");
 	window.getSelection().removeAllRanges();
+	hideSelection(input);
+}
+
+function hideSelection(element) {
+	element.classList.toggle("hideSelection");
 }
 
 function showMessage(element) {
