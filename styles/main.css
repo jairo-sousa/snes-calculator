@@ -46,6 +46,23 @@ input {
 
 #display {
 	flex-direction: column;
+	position: relative;
+}
+#display #copy {
+	height: 50%;
+
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	right: -50px;
+	position: absolute;
+
+	cursor: pointer;
+}
+#display #copy img {
+	width: 30px;
+	height: 30px;
 }
 
 #display input {
