@@ -11,6 +11,8 @@ joypad.addEventListener("click", (event) => {
 	if (clickedElement.className.includes("key")) {
 		inputByClick(clickedElement.innerText);
 		filterInput(displayedContent);
+		preview.value = displayedContent.value;
+		displayResult(preview);
 	}
 	if (clickedElement.className.includes("command")) {
 		commandByClick(clickedElement.innerText, displayedContent);
@@ -36,7 +38,6 @@ window.addEventListener("keydown", (keyEvent) => {
 			},
 			"=": () => {
 				displayedContentStatus.clearWhenInput = displayResult(displayedContent);
-				console.log(displayedContentStatus.clearWhenInput);
 			},
 			c: () => {
 				clearDisplay(displayedContent);
