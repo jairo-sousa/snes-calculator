@@ -1,9 +1,15 @@
 const displayedContent = document.querySelector("#displayedContent");
 const preview = document.querySelector("#preview");
 const joypad = document.getElementById("joypad");
+const message = document.getElementById("message");
+const copyBtn = document.getElementById("copy");
 
 const displayedContentStatus = {
 	clearWhenInput: false,
+};
+
+copyBtn.onclick = function () {
+	copyFromImput(displayedContent);
 };
 
 joypad.addEventListener("click", (event) => {
@@ -138,4 +144,12 @@ function evaluation(value) {
 
 function clearDisplay(display) {
 	display.value = "";
+}
+
+function copyFromImput(input) {
+	//hideSelection(input);
+	input.select();
+	input.setSelectionRange(0, 99999);
+	document.execCommand("copy");
+	window.getSelection().removeAllRanges();
 }

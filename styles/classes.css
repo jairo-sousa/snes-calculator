@@ -34,3 +34,12 @@
 .hide {
 	display: none;
 }
+
+.hideSlection ::selection {
+	background: #1f6a8f;
+	color: #fff;
+}
+.hideSlection ::-moz-selection {
+	background: #1f6a8f;
+	color: #fff;
+}
