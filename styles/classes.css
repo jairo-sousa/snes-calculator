@@ -15,3 +15,22 @@
 	justify-content: center;
 	align-items: center;
 }
+
+.message {
+	background-color: var(--message-bg-color);
+	color: var(--message-text-color);
+	width: 771px;
+	padding: 0.2rem;
+
+	text-align: center;
+
+	border-radius: 0.5rem;
+
+	font-size: 20pt;
+	position: absolute;
+	top: 5vh;
+}
+
+.hide {
+	display: none;
+}

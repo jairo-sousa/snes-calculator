@@ -139,12 +139,3 @@ function evaluation(value) {
 function clearDisplay(display) {
 	display.value = "";
 }
-
-//Improvements
-//TODO feat: add copy to clipboard buttom
-//TODO remove h1 "First release"
-
-//TODO bugfix: resize cross keys to exact visual size
-
-//bugfix
-//TODO bugfix: prevent repetitive dots use ajax?
