@@ -163,8 +163,10 @@ function hideSelection(element) {
 }
 
 function showMessage(element) {
-	element.classList.toggle("hide");
-	setTimeout(() => {
+	if (element.className.includes("hide")) {
 		element.classList.toggle("hide");
-	}, 3000);
+		setTimeout(() => {
+			element.classList.toggle("hide");
+		}, 3000);
+	}
 }
