@@ -9,7 +9,10 @@ const displayedContentStatus = {
 };
 
 copyBtn.onclick = function () {
-	copyFromImput(displayedContent);
+	if (displayedContent.value) {
+		copyFromImput(displayedContent);
+		showMessage(message);
+	}
 };
 
 joypad.addEventListener("click", (event) => {
@@ -152,4 +155,11 @@ function copyFromImput(input) {
 	input.setSelectionRange(0, 99999);
 	document.execCommand("copy");
 	window.getSelection().removeAllRanges();
+}
+
+function showMessage(element) {
+	element.classList.toggle("hide");
+	setTimeout(() => {
+		element.classList.toggle("hide");
+	}, 3000);
 }
