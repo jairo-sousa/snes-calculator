@@ -35,11 +35,9 @@
 	display: none;
 }
 
-.hideSlection ::selection {
-	background: #1f6a8f;
-	color: #fff;
+#display .hideSelection::selection {
+	background: transparent;
 }
-.hideSlection ::-moz-selection {
-	background: #1f6a8f;
-	color: #fff;
+#display .hideSelection::-moz-selection {
+	background: transparent;
 }
